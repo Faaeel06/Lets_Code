@@ -1,0 +1,169 @@
+class Pessoa:
+    """
+    Classe de pessoas
+    """
+
+    def __init__(self, name, hair_color, height):
+        self.nome = name
+        self.cor_cabelo = hair_color
+        if type(height) != float:
+            raise ValueError("Tipo de dado errado para altura!")
+        else:
+            self.altura = height
+
+
+bob = Pessoa(name='Bob', hair_color='Dark', height=1.70)
+print(bob)
+
+dados_bob = vars(bob)
+
+
+class Pessoa:
+    """
+    Classe de pessoas
+    """
+
+    def __init__(self, name, hair_color, height):
+        self.nome = name
+        self.cor_cabelo = hair_color
+        if type(height) != float:
+            raise ValueError("Tipo de dado errado para altura!")
+        else:
+            self.altura = height
+
+
+bob = Pessoa(name='Bob', hair_color='Dark', height=1.70)
+print(bob)
+
+dados_bob = vars(bob)
+
+
+class Pessoa:
+    """
+    Classe de pessoas
+    """
+
+    def __init__(self, name, hair_color, height):
+        """
+        Método construtor inicializa os
+        atributos, "nome", "cor_cabelo" e altura
+        """
+        self.nome = name
+        self.cor_cabelo = hair_color
+
+        if type(height) != float:
+            raise ValueError("Tipo de dado errado para altura!")
+        else:
+            self.altura = height
+
+        self.num_passaporte = None
+        self.marca_carro = None
+        self.num_filhos = 0
+
+
+Alice = Pessoa('Alice', 'Preto', 1.70)
+print(Alice)
+
+
+class Pessoa:
+    """
+    Classe de pessoas
+    """
+
+    def __init__(self, name, hair_color, height):
+        """
+        Método construtor inicializa os
+        atributos, "nome", "cor_cabelo" e altura
+        """
+        self.nome = name
+        self.cor_cabelo = hair_color
+
+        if type(height) != float:
+            raise ValueError("Tipo de dado errado para altura!")
+        else:
+            self.altura = height
+
+        self.num_passaporte = None
+        self.marca_carro = None
+        self.num_filhos = 0
+
+    def fala(self, texto):
+
+        self.texto = texto
+
+        print(f"{self.nome}, que tem cabelo cor {self.cor_cabelo} diz:\n{texto}")
+
+
+Alice = Pessoa('Alice', 'Preto', 1.70)
+Alice.fala(texto='Bem-vindo!')
+
+
+class Pessoa:
+    """
+    Classe de pessoas
+    """
+
+    def __init__(self, name, hair_color, height):
+        """
+        Método construtor inicializa os
+        atributos, "nome", "cor_cabelo" e altura
+        """
+        self.nome = name
+        self.cor_cabelo = hair_color
+
+        if type(height) != float:
+            raise ValueError("Tipo de dado errado para altura!")
+        else:
+            self.altura = height
+
+        self.num_passaporte = None
+        self.marca_carro = None
+        self.num_filhos = 0
+
+        self.emprego = False
+        self.salario = 0
+
+    def fala(self, texto):
+
+        self.texto = texto
+
+        print(f"{self.nome}, que tem cabelo cor {self.cor_cabelo} diz:\n{texto}")
+
+    def pinta_cabelo(self, cor):
+        self.cor_cabelo = cor
+
+    def status_emprego(self, empregado, salary):
+        """
+        Muda status de emprego e adiciona salário
+        argumentos:
+            - emprego: boolean;
+            - salary: int or float.
+        """
+        self.emprego = empregado
+
+        self.salario = salary if empregado else 0
+
+    def aumento(self, per):
+        """
+        aumenta o salario em 'per' pontos percentuais
+        Obs.: O per deve estar 'dividido por 100',
+        ou seja, se houver um aumento de 10%, temos per = 0.1
+        """
+        if self.emprego:
+            self.salario = self.salario * (1 + per)
+        else:
+            print(f'{self.nome} não tem emprego, portanto, não pode ter aumento!')
+
+
+
+emprego = None
+salario = 0
+
+print(f'Emprego: {emprego}\nSalário: {salario}')
+
+empregado = True
+salary = 2000
+
+salario = salary if empregado else 0
+
+print(f'Emprego: {emprego}\nSalário: {salario}')

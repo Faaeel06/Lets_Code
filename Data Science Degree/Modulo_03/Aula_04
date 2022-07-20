@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+f_1 = lambda n: 2 * (n ** 2) + 5 * n
+f_2 = lambda n: 500 * n + 4000
+
+x_min = 0
+X_max = 100
+n_pts = 1000
+x = np.linspace(x_min, X_max, n_pts)
+plt.figure(figsize=(12, 5))
+
+plt.plot(x, np.sin(x), label='Seno')
+plt.plot(x, np.cos(x), label='Cos')
+# plt.plot(x, np.tan(x), label='Tangente')
+
+
+plt.legend()
+plt.show()
+
+
+a = 0
+n = int(input())
+for i in range(n):
+    for j in range(i + 1, n):
+        a = a + 1
+        a = a + j
+
+print(a)

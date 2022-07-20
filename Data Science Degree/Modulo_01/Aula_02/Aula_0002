@@ -1,0 +1,42 @@
+idade = int(input('Digite a idade: ')
+mensagem = "Não pode dirigir"
+
+if idade >= 18:
+    mensagem = "Pode dirigir"
+
+print(mensagem)
+
+idade = int(input('Digite a idade: ')
+mensagem = None
+
+if idade >= 18:
+    mensagem = "Pode dirigir"
+else:
+    mensagem = "Não pode dirigir"
+
+print(mensagem)
+
+lado_a = float(input('Digite a extensão da primeira reta: '))
+lado_b = float(input('Digite a extensão da segunda reta: '))
+lado_c = float(input('Digite a extensão da terceira reta: '))
+
+if lado_a < lado_b + lado_c and lado_b < lado_a + lado_c and lado_c < lado_a + lado_b:
+    print('Pode formar um triângulo.')
+    if lado_a == lado_b == lado_c:
+        print('Este é um triângulo EQUILÁTERO.')
+    elif lado_a == lado_b != lado_c or lado_c == lado_a != lado_b or lado_c == lado_b != lado_a:
+        print('Este é um triângulo ISÓCELES.')
+    elif lado_a != lado_b != lado_c != lado_a:
+        print('Este é um triângulo ESCALENO.')
+else:
+    print('Essas retas não podem formar um triângulo.')
+
+a, b, c = input("Digite os valores das medidas dos lados do triângulo no formato: a,b,c").split(',')
+a, b, c = float(a), float(b), float(c)
+
+mensagem = "Não é triângulo"
+
+if (a+b>c and b+c>a and c+a>b) and (a>0 and b>0 and c>0):
+    mensagem = "É triângulo"
+
+print(mensagem)

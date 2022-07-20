@@ -1,0 +1,103 @@
+class Arvore:
+    """
+    classe para repr. uma árvore
+    """
+
+    def __int__(self, answer, right, left, level):
+        """
+        answer = Pergunta o sintoma
+        right(Arvore): objeto arvore, que representa a sub-arvore que está à direita
+        left(Arvore): objeto arvore, que representa a sub-arvore que está à esquerdda
+        """
+
+        self.pergunta = answer
+        self.direita = right
+        self.esquerda = left
+        self.nivel = level
+
+    def __repr__(self):
+
+        if self.direita == None and self.esquerda == None:
+
+            return f"O diagnóstico é: {self.pergunta}"
+
+        elif self.nivel == 0:
+
+            return f"A primeira pergunta é:  {self.pergunta}."
+
+        else:
+
+            return f"Agora eu pergunto:  {self.pergunta}."
+
+    def diagnostico(self):
+
+        if self.esquerda == None and self.direita == None:
+
+            return f"O dignóstico é: {self.pergunta}"
+
+        else:
+
+            pergunta = f"Você está com {self.pergunta}? [Responda Sim ou Não] "
+
+            resposta = input(pergunta).upper()
+
+            while resposta not in ["SIM", "NÃO"]:
+
+                pergunta = f'Não entendi!\nVocê está com {self.pergunta}?  [Responda Sim ou Não] '
+                resposta = input(pergunta).upper()
+
+            if resposta == "SIM":
+
+                return self.direita.diagnostico()
+
+            elif resposta == "NÃO":
+
+                return self.esquerda.diagnostico()
+
+
+dt = Arvore(p = "mal estar",
+            es = Arvore(p = "febre",
+                        es = Arvore(p = "dor de cabeça",
+                                    es = Arvore(p = "saudável",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    di = Arvore(p = "fadiga",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    lv = 2),
+                        di = Arvore(p = "mancha",
+                                    es = Arvore(p = "virose",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    di = Arvore(p = "sarampo",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    lv = 2),
+                       lv = 1),
+            di = Arvore(p = "dor de cabeça",
+                        es = Arvore(p = "vômito",
+                                    es = Arvore(p = "fome",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    di = Arvore(p = "infecção intestinal",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    lv = 2),
+                        di = Arvore(p = "boca seca",
+                                    es = Arvore(p = "falta de café",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    di = Arvore(p = "ressaca",
+                                                es = None,
+                                                di = None,
+                                                lv = 3),
+                                    lv = 2),
+                       lv = 1),
+           lv = 0)

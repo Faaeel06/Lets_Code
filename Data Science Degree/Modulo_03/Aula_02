@@ -1,0 +1,49 @@
+with open("./arquivos_salvos/arquivo_trabalhado.txt", "w", encoding="UTF-8") as file:
+
+    for elemento in lista:
+        file.write("\n")
+        file.write(elemento)
+
+lista = ["1", "2", "3", "4", "5", "Rafael", "Olá, tudo bem?"]
+with open("arquivos_salvos/arquivo_aula_2.txt", "w", encoding="UTF-8") as file:
+    file.write(f"{lista[0]}")
+    for elemento in lista[1:]:
+        file.write("\n")
+        file.write(elemento)
+
+
+
+notas = [float(input(f'Digite {i+1}ª a nota: '))
+         for i in range(int(input("Quantas notas você quer inserir? ")))]
+print(notas)
+
+with open("./arquivos_salvos/notas.txt", "w", encoding="UTF-8") as file:
+    file.write(f"{notas[0]}")
+    for nota in notas[1:]:
+        file.write(f"\n{nota}")
+
+with open("./arquivos_salvos/notas.txt", "r", encoding="UTF-8") as file:
+    conteudo = file.read()
+
+lista_lida = conteudo.split('\n')
+
+lista_lida = [float(x) for x in lista_lida]
+
+print(sum(lista_lida)/len(lista_lida))
+
+
+
+poema = """Batatinha quando nasce,
+Esparrama pelo chão,
+Levo papai no bolso,
+E mamãe no coração
+    """
+with open("./arquivos_salvos/poema.txt", "w", encoding="UTF-8") as file:
+    file.write(poema)
+
+conteudo = poema.split('\n')
+print(conteudo)
+
+with open("./arquivos_salvos/poema.txt", "r", encoding="UTF-8") as file:
+    conteudo = file.readline()
+    print(conteudo)

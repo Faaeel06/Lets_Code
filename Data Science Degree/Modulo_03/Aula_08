@@ -1,0 +1,78 @@
+grafo_00 = [[0[1,2]],[1[2,3]],[2[0,1,4]],[3[1,4]],[4[2,3,5]],[5[4,6],[6[5]]]]
+
+grafo_01 = [[0, 1, 0, 0, 0],
+            [0, 0, 1, 1, 0],
+            [0, 1, 0, 0, 1],
+            [1, 0, 0, 0, 0],
+            [0, 1, 0, 0, 0]]
+
+grafo_02 = [[0, [1, 2]],
+            [1, [2, 3]],
+            [2, [0, 1, 4]],
+            [3, [1, 4]],
+            [4, [2, 3, 5]],
+            [5, [4, 6],
+            [6, [5]]]]
+
+n = 4
+# print(*[[0] * n for _ in range(n)], sep="\n")
+# [str(x) for x in ma]
+
+
+class GrafoMtzAdj:
+
+    def __init__(self, n: int):
+
+        self.ma = [[0] * n for _ in range(n)]
+
+    def __repr__(self):
+
+        return "\n".join(str(x) for x in self.ma)
+
+    def add_edge(self, origin, destiny, direct, weight):
+
+        self.ma[origin][destiny] = weight
+
+        if not direct:
+            self.ma[destiny][origin] = weight
+
+
+class GrafoListADJ:
+
+    def __init__(self, n):
+
+        self.la = {i: [] for i in range(n)}
+
+    def __repr__(self):
+
+        txt = ""
+        for k, v in self.la.items():
+            txt = txt + f"{k}: {v}\n"
+
+        return txt
+
+    def add_edge(self, origin, destiny, direct):
+
+        self.la[origin].append(destiny)
+
+        if not direct:
+            self.la[destiny].append(origin)
+
+
+if __name__ == '__main__':
+
+    separador = '=' * 15
+    g = GrafoMtzAdj(5)
+    print(g)
+    print(separador)
+    g.add_edge(1, 2, direct=True, weight=1)
+    g.add_edge(0, 3, direct=False, weight=5)
+    print(g)
+    print(separador)
+    g2 = GrafoListADJ(5)
+    print(g2)
+    print(separador)
+    g2.add_edge(1, 2, direct=True)
+    g2.add_edge(0, 3, direct=False)
+    print(g2)
+    print(separador)

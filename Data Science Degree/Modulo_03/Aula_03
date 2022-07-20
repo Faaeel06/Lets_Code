@@ -1,0 +1,126 @@
+lista = [1, 4, 42, -5, 6]
+sorted(lista)
+
+1 > 2
+
+"abacate" > "abacaxi"
+
+separador = '==' * 50
+lista = [2, 5, 1, 3, 4, 6, 9, 8, 7, 0]
+
+print(lista)
+print("\n\n")
+
+for i in range(len(lista)):
+
+    idx_menor = i
+
+    print(f"entrada: {idx_menor}, {lista[idx_menor]}\n")
+
+    for j in range(i + 1, len(lista)):
+
+        if lista[j] < lista[idx_menor]:
+            idx_menor = j
+
+    print(f"saída: {idx_menor}, {lista[idx_menor]}\n")
+
+    # fazendo o swap explicitamente com variavel auxiliar
+    aux = lista[idx_menor]
+    lista[idx_menor] = lista[i]
+    lista[i] = aux
+
+    #     # outra opção, se aproveitando do "açúcar sintático" do python
+    #     lista[i], lista[idx_menor] = lista[idx_menor], lista[i]
+
+    print(lista)
+
+    print("\n")
+print(separador)
+
+lista = [2, 5, 1, 3, 3, 3, 4, 6, 9, 8, 7, 0]
+
+
+def selection_sort(lista):
+    # fazemos uma copia pra NÃO alterar inplace
+    lista = lista.copy()
+
+    for i in range(len(lista)):
+
+        idx_menor = i
+
+        for j in range(i + 1, len(lista)):
+
+            if lista[j] < lista[idx_menor]:
+                idx_menor = j
+
+        # faz o swap
+        lista[i], lista[idx_menor] = lista[idx_menor], lista[i]
+
+    return lista
+
+
+print(selection_sort(lista))
+
+print(separador)
+
+
+lista = [2, 5, 1, 3, 3, 3, 4, 6, 9, 8, 7, 0]
+
+
+def insertion_sort(lista):
+    lista = lista.copy()
+
+    for i in range(1, len(lista)):
+
+        marcado = lista[i]
+
+        # marcador de posição de trás pra frente
+        j = i - 1
+
+        while j >= 0 and marcado < lista[j]:
+            lista[j + 1] = lista[j]
+
+            j = j - 1
+
+        # faço a inserção efetivamente
+        lista[j + 1] = marcado
+
+    return lista
+
+
+print(insertion_sort(lista))
+
+
+from random import randint
+
+
+def quicksort(lista):
+    print(lista)
+
+    if len(lista) <= 1:
+        return lista
+
+    lista_esquerda = []
+    lista_direita = []
+    lista_meio = []
+
+    pivo = lista[randint(0, len(lista) - 1)]
+
+    for elemento in lista:
+
+        if elemento == pivo:
+
+            lista_meio.append(elemento)
+
+        elif elemento < pivo:
+
+            lista_esquerda.append(elemento)
+
+        else:
+
+            lista_direita.append(elemento)
+
+    le_ord = quicksort(lista_esquerda)
+    ld_ord = quicksort(lista_direita)
+
+    return le_ord + lista_meio + ld_ord

@@ -1,0 +1,41 @@
+#estudar @staticmethod
+
+variavel1.__add__(variavel2)
+
+import datetime as dt  # 'alias'
+
+agora = dt.datetime.now()
+
+print(agora.strftime('%d/%m/%y'))
+
+
+class Horario:
+    """
+    Classe para apresentar um horário com hora, minuto e segundo
+    """
+
+    def __init__(self, hour, minute, sec):
+        self.h = hour
+        self.m = minute
+        self.s = sec
+
+    # Desejável:
+
+    # - método de formatação AM/PM (para isso, precisamos controlar a representação)
+    # - método de despertador
+    # - método para operar (somar, subtrair) com horários
+
+
+if __name__ == '__main__':
+    agora = Horario(21, 15, 54)
+    print(agora.h)
+    print(agora.m)
+    print(agora.s)
+    print(vars(agora))
+
+    sai_para_almoco = Horario(12, 37, 54)
+    volta_do_almoco = sai_para_almoco + Horario(1, 30, 0)
+
+
+__repr__ : - exibe a chamada
+__str__ : - exibe o print

@@ -1,0 +1,36 @@
+# Substituir as "\" por "/" ou "\\"
+caminho_absouluto = "E:\Documentos\GitHub\meusProjetos\Lets Code\Data Science Degree\Modulo_03"
+caminho_relativo = "./../"
+
+caminho_absouluto = "E:\Documentos\GitHub\meusProjetos\Lets Code\Data Science Degree\Modulo_03\arquivos_salvos"
+caminho_relativo = "./arquivos_salvos"
+
+open("")
+
+caminho_absoluto = "E:\\Documentos\\GitHub\\meusProjetos\\Lets Code\\Data Science Degree\\Modulo_03\\arquivos_salvos\\arquivo1.txt"
+caminho_relativo = "./arquivos_salvos/arquivo2.txt"
+
+arquivo_1 = open(caminho_absoluto, "w", encoding="UTF-8")
+arquivo_1.write("Começando os trabalhos!!!")
+arquivo_1.close()
+
+arquivo_2 = open(caminho_relativo, "w", encoding="UTF-8")
+arquivo_2.write("Começando os trabalhos!!!")
+arquivo_2.close()
+
+caminho_relativo_2 = "./arquivos_salvos/arquivo3.txt"
+with open(caminho_relativo_2, "w", encoding="UTF-8") as arquivo_3:
+
+    arquivo_3.write("Método sem perda...")
+
+with open("./arquivo_teste_pasta.txt", "w", encoding="UTF-8") as teste:
+    teste.write("Teste da pasta\nMuito massa!!")
+
+with open("arquivo_teste_pasta_2.txt", "w", encoding="UTF-8") as teste:  # Sem indentação de pasta
+    teste.write("Teste da pasta\nMuito massa!!")
+
+with open("./../arquivo_teste_pasta_anterior.txt", "w", encoding="UTF-8") as teste:  # Pode ocultar "./"
+    teste.write("Teste da pasta\nMuito massa!!")
+
+with open("./arquivos_salvos/arquivo_bugado.txt", "w") as teste:
+    teste.write("Á : ô êê~eêã!!")

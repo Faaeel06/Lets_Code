@@ -1,0 +1,81 @@
+--criar tabelas
+
+CREATE TABLE Aluno(id SERIAL, nome varchar(255), cpf char(11))
+
+CREATE TABLE  Aluno(
+    nome VARCHAR(255),
+    cpf CHAR(11),
+    observacao TEXT,
+    idade INTEGER,
+    dinheiro NUMERIC(10,2),
+    altura REAL,
+    ativo BOOLEAN,
+    data_nascimento DATE,
+    hora_aula TIME,
+    matriculado_em TIMESTAMP
+);
+
+-- dropar tabelas
+DROP TABLE Aluno;
+
+-- Especifíco do postgree
+DROP TABLE "aLUNO";
+
+-- [Exercício]
+
+Um identificador numérico, sem casas decimais, que deve ser incrementado
+O CNPJ
+A razão social
+O nome fantasia
+A data de abertura da empresa
+
+-- Inserir dados em uma tabela:
+
+INSERT INTO Aluno (nome)
+    VALUES ('Rafael R S Machado');
+
+-- leitura
+
+    SELECT [DADOS] FROM [TABELA];
+
+-- TODAS AS COLUNAS
+
+    SELECT * FROM ALUNO;
+
+-- SELECIONANDO O CAMPO
+
+    SELECT cpf, altura FROM Aluno;
+
+-- ALIAS
+
+    SELECT matriculado_em
+        AS Data da Matrícula, cpf, altura
+            FROM Aluno;
+
+-- CRIANDO TABELAS COM SELECT
+
+    CREATE TABLE Aluno_2 AS (SELECT * FROM Aluno);
+
+-- SELECT DUMMIE
+
+    SELECT 1 AS NUMERO;
+
+    SELECT *, 'TREINO' AS FLAG FROM ALUNO;
+
+ -- OPERAÇÕES NUMÉRICAS
+
+     SELECT dinheiro - 100 AS Dinh_subtr, cpf FROM Aluno;
+
+-- CONTAR QUANTIDADE DE LINHAS
+
+    SELECT COUNT(*) FROM customers;
+
+-- TOP / LIMITED
+
+    SELECT * TOP 10 FROM customers;
+    SELECT * FROM customers LIMIT 10;
+
+-- FILTROS (WHERE)
+
+    SELECT * FROM customers WHERE country = 'Germany';
+    SELECT * FROM customers WHERE country in ('Germany', 'Brazil', 'Argentina');

@@ -1,0 +1,19 @@
+import datetime as dt
+import random
+from time import sleep
+
+random.randint(0, 100)
+x = 2
+print(x)
+
+escola = "Let's Code"
+
+print(dir(escola))
+
+print(random)
+print(dt)
+print(dir())
+
+print('Tick')
+sleep(1)
+print('Tock')

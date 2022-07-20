@@ -1,0 +1,55 @@
+class Animal:
+
+    def __init__(self, name, breed):
+        self.nome = name
+        self.raca = breed
+
+
+    def faz_barulho(self):
+        print(f"O animal {self.nome} faz barulho.")
+
+
+# class Cachorro:
+#
+#     def __init__(self, name):
+#         self.nome = name
+#
+#     def faz_barulho(self):
+#         print(f"O animal {self.nome} faz barulho.")
+#
+#     def late(self):
+#         print(f"O cachorro {self.nome} faz au au.")
+
+
+class Cachorro(Animal):
+
+    def __init__(self, name, breed, color):
+
+        super().__init__(name, breed)
+        self.cor = color
+
+    def faz_barulho(self):
+        super().faz_barulho()
+
+        print(f'Mas como o {self.nome} é um cachorro, ela late!')
+
+    def late(self):
+        print(f"O cachorro {self.nome} faz au au.")
+
+
+if __name__ == '__main__':
+    # a1 = Animal("bicho")
+    # var_a1 = a1.nome
+    # a1.faz_barulho()
+    # c1 = Cachorro("bowie")
+    # var_c1 = c1.nome
+    # c1.faz_barulho()
+    # c1.late()
+    # print(var_a1, var_c1)
+    # print(isinstance(c1, Cachorro),
+    #       isinstance(c1, Animal),
+    #       isinstance(a1, Animal),
+    #       isinstance(a1, Cachorro))
+    bowie = Cachorro("Chiara", "Mestiça", "Preta")
+    print(vars(bowie))
+    bowie.faz_barulho()
