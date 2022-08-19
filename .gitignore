@@ -3,6 +3,10 @@
 
 *.png
 *.jpg
+*.jpeg
+*.ico
+*.icon
+*.tiff
 
 *.csv
 *.ini
@@ -14,4 +18,8 @@
 *.zip
 *.rar
 *.tar
+
+*.wav
+*.mp3
+*.mp4
 
