@@ -18,6 +18,7 @@
 *.zip
 *.rar
 *.tar
+*.gz
 
 *.wav
 *.mp3
