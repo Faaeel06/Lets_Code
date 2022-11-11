@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import pandas as pd
 import numpy as np
 import random as rnd
@@ -23,8 +21,7 @@ print('=' * 20, '\n', {'Criança': (base_dados[children]['Survived'].sum()),
                        'Homens': (base_dados[male_adult]['Survived'].sum()),
                        'Mulheres': (base_dados[female_adult]['Survived'].sum())}, '\n', '=' * 20)
 
->>>>>>> 3f17da5 (Projeto Aula)
-=======
+
 import pandas as pd
 import numpy as np
 import random as rnd
@@ -47,4 +44,3 @@ print('=' * 20, '\n', passanger_filter, '\n', '=' * 20)
 print('=' * 20, '\n', {'Criança': (base_dados[children]['Survived'].sum()),
                        'Homens': (base_dados[male_adult]['Survived'].sum()),
                        'Mulheres': (base_dados[female_adult]['Survived'].sum())}, '\n', '=' * 20)
->>>>>>> a766d2b (Atualização de aulas)
